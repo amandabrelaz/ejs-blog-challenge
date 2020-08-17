@@ -1,0 +1,22 @@
+<%- include("partials/header") -%>
+
+  <h1> Home </h1>
+  <p> <%= paragrap %> </p>
+
+  <% myPosts.forEach(function(post){  %>
+
+    <%  var length = 60;  %>
+    <h1> <%= post.title %> </h1>
+    <p>
+      <%= post.content.substring(0,length)+"..." %>
+      <a href="/posts/<%= post.title %>" >Read More</a>
+    </p>
+
+  <% });  %>
+
+  <form action="/" method="post">
+    <button class="btn btn-primary" type="submit" name="button">Go</button>
+  </form>
+
+
+<%- include("partials/footer") -%>
